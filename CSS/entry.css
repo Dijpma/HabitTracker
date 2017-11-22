@@ -1,4 +1,14 @@
 
+
+.topnav  a{
+	color: white;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+	color: white;
+}
+
 body {
 	background-image: url("Background.jpg");
 }
@@ -13,4 +23,9 @@ header, footer {
 	background-color: red;
 	clear: left;
 	text-align: center;
+}
+
+.subscribe {
+	color: white;
+
 }
