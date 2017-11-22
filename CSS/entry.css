@@ -1,0 +1,16 @@
+
+body {
+	background-image: url("Background.jpg");
+}
+
+h1 {
+	color: blue;
+}
+
+header, footer {
+	padding: 1em;
+	color: white;
+	background-color: red;
+	clear: left;
+	text-align: center;
+}
