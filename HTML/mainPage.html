@@ -1,7 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<title>Habit Tracker</title>
 </head>
+
 <body>
+<main>
+	<div class="left">
+        <div id="newtask">
+            <div class="title">
+                New Habit
+            </div>
+            <form id="taskform">
+                Habit: <input id="taskname" type="text"><br>
+                Description:<input id="taskdesc" type="text"><br>
+                Good or Bad:
+                <input type="radio" id="star1" name="priority" value="1" checked/><label for="star1" title="Not very important">Good</label>
+                <input type="radio" id="star2" name="priority" value="2"/><label for="star2" title="Kinda important">Bad</label>
+                <br>Starting Date: <input id="deadlinedate" type="date"><br>
+                Times you want to do it: <input type="number" id="reminderdays" min="0"> times<br>
+                <button type="button" id="addHabitbutton">Add Habit</button>
+                <input type="reset" value="Clear">
+            </form>
+        </div>
+    </div>
+    <div class="right">
+        Habits List <a href="entryPage.html"><img src="" alt="Home icon"/></a>
+        <div class="title" id="Habitlist">
+            <ul class="habitSlist">
+                <li>
+                    <div>
+                        <div class="tasklist-name"><b>Habit 1</b></div> <div class="tasklist-deadline">23/11/2016</div> <div class="tasklist-priority">!</div><div class="tasklist-buttons">
+                        <img src="" alt="Edit icon"><img src="" alt="Delete Icon">
+                            </div>
+                            <div class="tasklist-desc">Description</div>
+                    </div>
+                </li>
+            </ul>
+            <button>Export</button>
+            |
+            <button>Share</button>
+            <a href="#">Sign Out</a>
+        </div>
+    </div>
+</main>
 </body>
 </html>
