@@ -1,0 +1,22 @@
+body {
+	background-image: url("Background.jpg");
+	color: white;
+}
+
+.sidebar {
+	background-color: gray;
+	width: 100px;
+	height: 400px;
+	margin-top: 10px;
+	}
+	
+.sidebarButton {
+	color:black;
+	background-color: red;
+	
+	margin-top: 10px;
+	margin-left: 10px;
+	height: 80px;
+	width: 80px;
+
+}
