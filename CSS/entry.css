@@ -9,6 +9,24 @@
 	color: white;
 }
 
+.loginfield {
+	border: 2px solid #a8afb3;
+	border-radius: 5px;
+	
+	/*Position*/
+	position: fixed;
+	right: 180px;
+}
+
+.loginelement {
+	position: fixed;
+	right: 200px;
+}
+
+.subscribe {
+	color: white;
+}
+
 body {
 	background-image: url("Background.jpg");
 }
@@ -25,7 +43,8 @@ header, footer {
 	text-align: center;
 }
 
-.subscribe {
-	color: white;
-
+footer {
+	position:fixed;
+	bottom: 0;
+	width: 100%;
 }
