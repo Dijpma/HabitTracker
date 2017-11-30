@@ -26,9 +26,9 @@
 	<div class="left">
 		
         <div id="newtask">
-            <div class="title">
+            <h2>
                 New Habit
-            </div>
+            </h2>
             <form id="taskform">
                 Habit: <input id="taskname" type="text"><br>
                 Description:<input id="taskdesc" type="text"><br>
@@ -37,10 +37,13 @@
                 <input type="radio" id="star2" name="priority" value="2"/><label for="star2" title="Kinda important">Bad</label>
                 <br>Starting Date: <input id="deadlinedate" type="date"><br>
                 Times you want to do it: <input type="number" id="reminderdays" min="0"> times<br>
-                <button type="button" id="addHabitbutton">Add Habit</button>
+
+                <button type="button" id="addHabitbutton" onclick="newElement()">Add Habit</button>
+
                 <input type="reset" value="Clear">
             </form>
         </div>
+
     </div>
     <div class="right">
         Habits List <a href="entryPage.html"><img src="" alt="Home icon"/></a>

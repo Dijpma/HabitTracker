@@ -1,42 +1,65 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="../CSS/entry.css">
-	<title>HabitTracker</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../CSS/entry.css">
+  <title>HabitTracker</title>
 </head>
-<body>
 
-	<div class="topnav">
-		Username:
-		<input type="text" name="firstname">
-		Password:
-		<input type="text" name="firstname">
-		<button>Login</button>
-	</div>
-	
-	<h1>HabitTracker</h1>
-	
-	<div class="subscribe" >
-		<form action="/action_page.php" class="loginelement">
-		Username:<br>
-		<input type="text" class="loginfield" name="firstname">
-		<br>
-		Email name:<br>
-		<input type="text" class="loginfield" name="lastname">
-		<br>
-		Password:<br>
-		<input type="text" class="loginfield" name="password">
-		<br>
-		Confirm Password:<br>
-		<input type="text" class="loginfield" name="confirm password">
-		<br><br>
-		<input type="submit" value="Create account" id = "submit button">
-		</form> 
-	</div>
-	<footer>
-	Copyright &copy;
-	<a href="#">Contact</a>
-	</footer>
-</body>
-</html>
+<body>
+<div class="topnav">
+  <form action="" name="loginForm">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button type="submit">Log in</button>
+  </form>
+</div>
+
+<h1>HabitTracker</h1>
+  
+  <div class="subscribe" >
+    <form action="" class="loginelement">
+    Username:<br>
+    <input type="text" class="loginfield" name="firstname">
+    <br>
+    Email name:<br>
+    <input type="text" class="loginfield" name="lastname">
+    <br>
+    Password:<br>
+    <input type="text" class="loginfield" name="password">
+    <br>
+    Confirm Password:<br>
+    <input type="text" class="loginfield" name="confirm password">
+    <br><br>
+    <input type="submit" value="Create account" id = "submit_button">
+    </form> 
+  </div>
+
+  <footer>
+  Copyright &copy;
+  <a href="#">Contact</a>
+  </footer>
+
+
+<script >
+document.loginForm.onsubmit = function validate() {
+  if(document.getElementById("username").value == "")
+  {
+    console.log("check username");
+    window.alert("check username");
+    document.getElementById("username").focus();
+    return false;
+  }
+ 
+  if(document.getElementById("password").value == "")
+  {
+    console.log("check password");
+    window.alert("check password");
+    document.getElementById("password").focus();
+    return false;
+  }
+  location = "mainPage.html";
+  // we need this to prevent the form from submitting
+  return false;
+}
+</script>
+</body></html>

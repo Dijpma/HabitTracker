@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/newHabit.css">
+	<title>Habit Tracker</title>
+</head>
+<body>
+	<div class="sidebar">
+			<div class="sidebarButton">
+			Graph
+			</div>
+			<div class="sidebarButton">
+			Calender
+			</div>
+			<div class="sidebarButton">
+			Bad Habits
+			</div>
+			<div class="sidebarButton">
+			Good Habits
+			</div>
+	</div>
+
+	<div id="myDIV" class="header">
+	  <!-- <form action="" id="myForm">
+	  <h2>My Habits</h2>
+	  		<input type="text" id="myInput" placeholder="Habits...">
+		  	<input type="radio" name="goodBadHabit" value="Good" id="good"> <label for="good" id="labelGood">Good</label> <br>
+		  	<input type="radio" name="goodBadHabit" value="Bad" id="bad">  <label for="bad" id="labelBad">Bad</label><br>
+	  
+	  		<span onclick="newElement()" class="addBtn">Add</span>
+	  </form> -->
+	  <h2>
+                New Habit
+            </h2>
+	  <form id="taskform">
+	  			<label id="habitL">
+                Habit: 
+            	</label>
+
+                <input id="taskname" type="text">
+                <!-- Description:<input id="taskdesc" type="text"><br> -->
+                Good or Bad:
+                <input type="radio" id="star1" name="priority" value="1" checked/><label for="star1" title="Not very important">Good</label>
+                <input type="radio" id="star2" name="priority" value="2"/><label for="star2" title="Kinda important">Bad</label> 
+                <br>
+                <br>
+                <label id="strDate">
+                Starting Date: 
+                </label>
+                <input id="deadlinedate" type="date">
+                <label id="">
+                How many times do you want to do it: 
+                </label>
+
+                <input type="number" id="reminderdays" min="0"> 
+                <br>
+                <br>
+                <button type="button" id="addHB" onclick="newElement()">Add Habit</button>
+
+                <input type="reset" value="Clear">
+                <br>
+                <br>
+            </form>
+	</div>
+
+	<ul id="myUL">
+	</ul>
+</body>
+
+<script>
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+</html>
