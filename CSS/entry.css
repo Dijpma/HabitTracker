@@ -1,29 +1,10 @@
 
-
 .topnav  a{
 	color: white;
 }
 .topnav {
     overflow: hidden;
     background-color: #333;
-	color: white;
-}
-
-.loginfield {
-	border: 2px solid #a8afb3;
-	border-radius: 5px;
-	
-	/*Position*/
-	position: fixed;
-	right: 180px;
-}
-
-.loginelement {
-	position: fixed;
-	right: 200px;
-}
-
-.subscribe {
 	color: white;
 }
 
@@ -35,16 +16,44 @@ h1 {
 	color: blue;
 }
 
-header, footer {
+/*header, footer {
 	padding: 1em;
 	color: white;
 	background-color: red;
 	clear: left;
 	text-align: center;
-}
+}*/
 
 footer {
 	position:fixed;
 	bottom: 0;
 	width: 100%;
+}
+
+.loginelement {
+	background-color: yellow;
+	/*position: fixed;*/
+	
+}
+
+.loginfield {
+	border: 2px solid #a8afb3;
+	border-radius: 5px;
+
+	position: fixed;
+	right: 180px;
+}
+
+.subscribe {
+	color: white;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+
+.container {
+  display: grid;
+  
 }
