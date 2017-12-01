@@ -88,7 +88,7 @@
             </ul>
         </div> -->
         <ul id="myUL">
-            <li>Smoking buying cigarettes every day Bad 12/09/2017 6</li>
+            
         </ul>
 
 
@@ -109,32 +109,37 @@
 <script>
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
+// var i;
+// for (i = 0; i < myNodelist.length; i++) {
+//   var span = document.createElement("SPAN");
+//   var txt = document.createTextNode("\u00D7");
+//   span.className = "close";
+//   span.appendChild(txt);
+//   myNodelist[i].appendChild(span);
+// }
 
 // Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
+function registerEventListener () {
+  var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
     div.style.display = "none";
-  }
+  };
 }
-
+}
 // Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+var list = document.querySelector("ul");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
@@ -148,14 +153,33 @@ function newElement() {
 
   var inputStar = inputStar1.checked ? inputStar1.value : inputStar2.value;
 
-  var t1 = document.createTextNode(inputValue + ', ' + inputDescription + ', ' + inputStar + ', ' + inputDate + ', ' + inputReminderDays);
+  var t1 = document.createTextNode(
+    inputValue +
+      ", " +
+      inputDescription +
+      ", " +
+      inputStar +
+      ", " +
+      inputDate +
+      ", " +
+      inputReminderDays
+  );
   li.appendChild(t1);
-
-  if (inputValue === '' || inputDescription === '' || inputReminderDays === '' || inputDate === '') {
+  var close_span = document.createElement("SPAN");
+  var close_span_X = document.createTextNode("\u00D7");
+  close_span.className = "close";
+  close_span.appendChild(close_span_X);
+  li.appendChild(close_span);
+  if (
+    inputValue === "" ||
+    inputDescription === "" ||
+    inputReminderDays === "" ||
+    inputDate === ""
+  ) {
     alert("Your fields are empty, please write something!");
-  } 
-  else {
+  } else {
     document.getElementById("myUL").appendChild(li);
+    registerEventListener();
   }
   document.getElementById("taskname").value = "";
   document.getElementById("taskdesc").value = "";
@@ -173,9 +197,12 @@ function newElement() {
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
-    }
+    };
   }
 }
+
+registerEventListener();
+
 </script>
 </body>
 </html>
