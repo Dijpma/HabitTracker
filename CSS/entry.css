@@ -15,14 +15,14 @@ body {
 h1 {
 	color: blue;
 }
-
-/*header, footer {
+/**/
+header, footer {
 	padding: 1em;
 	color: white;
 	background-color: red;
 	clear: left;
 	text-align: center;
-}*/
+}
 
 footer {
 	position:fixed;

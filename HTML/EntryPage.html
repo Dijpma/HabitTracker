@@ -1,0 +1,51 @@
+<!DOCTYPE html><html>
+<head>
+  <meta charset="UTF-8"><!-- ? -->
+  <link rel="stylesheet" type="text/css" href="../CSS/newEntry.css">
+  <title>HabitTracker</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <form action=""  name="loginForm" >
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button type="submit">Log in</button>
+    </form>
+  </div>
+
+  <h1>HabitTracker Create Account</h1>
+  
+  <div class="subscribe" id="container">
+    <form name="logIn" class="loginelement">
+
+      <label for="Uname">Username:</label>
+      <input id="Uname" name="Uname" value="" > 
+
+
+      <label for="Email">Email:</label>
+      <input value="" id="Email"  name="Email" > 
+
+      <label for="Password">Password:</label>
+      <input type="Password" value="" id="Password"  name="Password" > 
+
+      <label for="ConfirmPassword">Confirm Password:</label>
+      <input type="Password" value="" id="ConfirmPassword"  name="ConfirmPassword" > 
+      <!-- Email name:           <input type="text" class="loginfield" name="lastname"> 
+      Password:             <input type="password" class="loginfield" name="password">   
+      Confirm Password:     <input type="text" class="loginfield" name="confirm password">   -->
+      
+      <input id="sBtn" type="button" onclick="check(this.form)" id = "submit_button" value="Create account"/>     
+      <input id="sBtn" type="reset" value="Reset"/>
+    </form> 
+  </div>
+
+  <footer>
+  Copyright &copy;
+  <a href="#">Contact</a>
+  </footer>
+
+
+<script src="../JS/EntryPage.js"></script>
+</body>
+</html>

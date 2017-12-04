@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/mainPage.css">
+	<title>Habit Tracker</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1> New Habit</h1>
+
+            <div id="myDIV" class="Makehabbit">
+                <form id="taskform">
+                    Habit: <input id="taskname" type="text" placeHolder="Some Habits">
+                    <textarea id="taskdesc" rows="4" cols="50" name="comment" form="usrform"  placeHolder="Description here ..."></textarea>
+                    <div>
+                        <label for="priority"> Good or Bad: </label>
+                        <input type="radio" id="star1" name="priority" value="Good" checked/><label for="star1" title="Not very important">Good</label>
+                        <input type="radio" id="star2" name="priority" value="Bad"/><label for="star2" title="Kinda important">Bad</label>
+                    </div>
+
+                    <br>
+                    Starting Date: <input id="deadlinedate" type="date" placeHolder="01-01-2017" >
+                    Times you want to do it: <input type="number" id="reminderdays" min="0" placeHolder="3 times" >
+                    <span type="button" id="sBtn" value="Add Habit" onclick="newElement()" class="addBtn" >Add Habit</span>
+                    <input type="reset" value="Clear">
+                </form>
+            </div>
+
+        </div>
+
+        <div class="habitList">
+            <h2>Habits List </h2>
+            <ul id="myUL">
+            </ul>
+        </div>
+    </main>
+    <footer>
+        Copyright &copy;
+        <a href="#">Contact</a>
+        <button style="float:righ">Export</button>
+        <button style="float:righ">Share</button>
+        <button style="float:righ">Sign Out</button>
+    </footer>
+
+    <script src="../JS/MainPage.js"></script>
+</body>
+</html>
