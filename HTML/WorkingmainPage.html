@@ -59,36 +59,9 @@
     <div class="habitList">
 
         <h2>Habits List </h2>
-        <!-- <div class="title" id="Habitlist">
-            <ul class="habitSlist">
-                <li>
-                    <div>
-                        <div class="tasklist-name">
-                            <b>Habit 1</b>
-                        </div>
 
-                        <div class="tasklist-desc">
-                            Description
-                        </div>
-
-                        <div class="tasklist-deadline">
-                            Bad
-                        </div>
-
-                         <div class="tasklist-deadline">
-                            23/11/2016
-                        </div> 
-
-                        <div class="tasklist-deadline">
-                            20
-                        </div>
-
-                    </div>
-                </li>
-            </ul>
-        </div> -->
         <ul id="myUL">
-            
+
         </ul>
 
 
@@ -109,64 +82,85 @@
 <script>
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
-// var i;
-// for (i = 0; i < myNodelist.length; i++) {
-//   var span = document.createElement("SPAN");
-//   var txt = document.createTextNode("\u00D7");
-//   span.className = "close";
-//   span.appendChild(txt);
-//   myNodelist[i].appendChild(span);
-// }
-
 // Click on a close button to hide the current list item
 function registerEventListener () {
-  var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-}
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
-list.addEventListener(
-  "click",
-  function(ev) {
-    if (ev.target.tagName === "LI") {
-      ev.target.classList.toggle("checked");
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      };
     }
-  },
-  false
-);
+}
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("taskname").value;
   var inputDescription = document.getElementById("taskdesc").value;
-  var inputStar1 = document.getElementById("star1");
-  var inputStar2 = document.getElementById("star2");
+  //var inputStar1 = document.getElementById("star1");
+  //var inputStar2 = document.getElementById("star2");
   var inputDate = document.getElementById("deadlinedate").value;
   var inputReminderDays = document.getElementById("reminderdays").value;
 
-  var inputStar = inputStar1.checked ? inputStar1.value : inputStar2.value;
+  //var inputStar = inputStar1.checked ? inputStar1.value : inputStar2.value;
 
-  var t1 = document.createTextNode(
-    inputValue +
-      ", " +
-      inputDescription +
-      ", " +
-      inputStar +
-      ", " +
-      inputDate +
-      ", " +
-      inputReminderDays
-  );
-  li.appendChild(t1);
+
+  /*var t1 = document.createTextNode(
+      inputValue +
+      inputDescription
+  );*/
+
+
+    var t1 = document.createTextNode(
+        inputValue
+    );
+
+    var t2 = document.createTextNode(
+        inputDescription
+    );
+
+
+    var div1 = document.createElement("div");
+    div1.appendChild(t1);
+
+    var div2 = document.createElement("div");
+    div2.appendChild(t2);
+
+  var para = document.createElement("P");
+  para.appendChild(div1);
+    para.appendChild(div2);
+  li.appendChild(para);
+
+  var canEdit = false;
+
   var close_span = document.createElement("SPAN");
   var close_span_X = document.createTextNode("\u00D7");
+
+
+  var editButton = document.createElement("button");
+  var t = document.createTextNode("Edit");
+  editButton.appendChild(t);
+  editButton.id = "btnDIV";
+  var elem = document.getElementById("btnDIV");
+  editButton.onclick = function () {
+      if(canEdit) {
+          para.contentEditable = "false";
+          para.style.color = "black";
+          canEdit = false;
+          editButton.textContent = "Edit";
+      } else {
+          para.contentEditable = "true";
+          canEdit = true;
+          para.style.color = "green";
+          editButton.textContent = "Save";
+      }
+  };
+  li.appendChild(editButton);
+
+
+  //error message
   close_span.className = "close";
   close_span.appendChild(close_span_X);
   li.appendChild(close_span);
@@ -177,22 +171,25 @@ function newElement() {
     inputDate === ""
   ) {
     alert("Your fields are empty, please write something!");
-  } else {
+  }
+  else {
     document.getElementById("myUL").appendChild(li);
     registerEventListener();
   }
+
+
   document.getElementById("taskname").value = "";
   document.getElementById("taskdesc").value = "";
   document.getElementById("star").value = "";
   document.getElementById("deadlinedate").value = "";
   document.getElementById("reminderdays").value = "";
 
+  // Delete button
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
-
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
       var div = this.parentElement;
@@ -202,6 +199,58 @@ function newElement() {
 }
 
 registerEventListener();
+
+function Habit(name, description, positive, reminder, deadline) {
+    this.name = name;
+    this.description = description;
+    this.positive = positive;
+    this.createionDate = new Date();
+    this.reminderDays = reminder;
+    this.deadlineDate = deadline;
+    this.frequency;
+}
+// Setters
+Habit.prototype.setName = function(n){this.name = n;};
+Habit.prototype.setDescription = function (d) {this.description = d;};
+Habit.prototype.setPositive = function (pos) {
+    this.positive = pos;
+};
+Habit.prototype.setFrequency = function (freq) {
+    this.frequency = freq;
+};
+// Getters
+Habit.prototype.getName = function () {
+    return this.name;
+};
+Habit.prototype.getDescription = function () {
+    return this.description;
+};
+Habit.prototype.isPositive = function () {
+    return this.positive;
+};
+Habit.prototype.getFrequency = function () {
+    return this.frequency;
+};
+Habit.prototype.getDate = function () {
+    return this.createionDate;
+};
+Habit.prototype.getReminderDay = function () {
+    return this.reminderDays;
+};
+Habit.prototype.getDeadline = function () {
+    return this.deadlineDate;
+};
+
+function createInput(ph,id) {
+    var input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = ph;
+    input.className = "edit";
+    input.id = id;
+    return input;
+}
+
+
 
 </script>
 </body>
