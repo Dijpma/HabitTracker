@@ -35,7 +35,7 @@ function check(form) {
         alert("Password is not the same.")
     }
     if(form.Uname.value === "name" && form.Password.value === "1" && form.ConfirmPassword.value === "1") {
-        window.open('mainPage.html')
+        window.open('MainPage.html')
     }
     else {
         alert("Error Password or Username")

@@ -10,7 +10,6 @@
     <main>
         <div>
             <h1> New Habit</h1>
-
             <div id="myDIV" class="Makehabbit">
                 <form id="taskform">
                     Habit: <input id="taskname" type="text" placeHolder="Some Habits">
@@ -20,7 +19,15 @@
                         <input type="radio" id="star1" name="priority" value="Good" checked/><label for="star1" title="Not very important">Good</label>
                         <input type="radio" id="star2" name="priority" value="Bad"/><label for="star2" title="Kinda important">Bad</label>
                     </div>
-
+                    <!--<div class="frequency">-->
+                    <div id="frequency">
+                        Frequency:
+                        <br>
+                        <button class ="frequencyButton">daily</button>
+                        <button class ="frequencyButton">weekly</button>
+                        <button class ="frequencyButton">monthly</button>
+                    </div>
+                        <!--</div>-->
                     <br>
                     Starting Date: <input id="deadlinedate" type="date" placeHolder="01-01-2017" >
                     Times you want to do it: <input type="number" id="reminderdays" min="0" placeHolder="3 times" >
@@ -28,13 +35,11 @@
                     <input type="reset" value="Clear">
                 </form>
             </div>
-
-        </div>
-
-        <div class="habitList">
-            <h2>Habits List </h2>
-            <ul id="myUL">
-            </ul>
+            <div class="habitList">
+                <h2>Habits List </h2>
+                <ul id="myUL">
+                </ul>
+            </div>
         </div>
     </main>
     <footer>
