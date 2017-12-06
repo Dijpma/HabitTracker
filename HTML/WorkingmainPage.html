@@ -23,7 +23,7 @@
 			</div>
 		</div> -->
 
-<main>
+<main id="mainid">
 	<div>
 		<h1>
             New Habit
@@ -34,10 +34,10 @@
 
                 Habit: <input id="taskname" type="text" placeHolder="Some Habits">
 
-                <textarea id="taskdesc" rows="4" cols="50" name="comment" form="usrform"  placeHolder="Description here ..."></textarea> 
+                <textarea id="taskdesc" rows="4" cols="50" name="comment"  placeHolder="Description here ..."></textarea>
 
                 <div>
-                    <label for="priority"> Good or Bad: </label>
+                    <label> Good oddr Bad: </label>
                     <input type="radio" id="star1" name="priority" value="Good" checked/><label for="star1" title="Not very important">Good</label>
                     <input type="radio" id="star2" name="priority" value="Bad"/><label for="star2" title="Kinda important">Bad</label>
                 </div>
@@ -97,6 +97,7 @@ function registerEventListener () {
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
+  li.id = "hbid";
   var inputValue = document.getElementById("taskname").value;
   var inputDescription = document.getElementById("taskdesc").value;
   //var inputStar1 = document.getElementById("star1");
@@ -113,25 +114,162 @@ function newElement() {
   );*/
 
 
-    var t1 = document.createTextNode(
-        inputValue
-    );
+  var t1 = document.createTextNode(
+      inputValue
+  );
 
-    var t2 = document.createTextNode(
-        inputDescription
-    );
+  var t2 = document.createTextNode(
+      inputDescription
+  );
 
 
-    var div1 = document.createElement("div");
-    div1.appendChild(t1);
+  //var div1 = document.createElement("div");
+  //div1.appendChild(t1);
+  //div1.id = "pHabit";
+  //li.appendChild(div1);
+  //li.appendChild(document.createElement("br"));
+  //var div2 = document.createElement("div");
+  //div2.appendChild(t2);
+  //div2.id = "pDesc";
+  //li.appendChild(y);
+  //li.appendChild(div2);
 
-    var div2 = document.createElement("div");
-    div2.appendChild(t2);
 
-  var para = document.createElement("P");
-  para.appendChild(div1);
-    para.appendChild(div2);
-  li.appendChild(para);
+  var list = document.createElement("ul");
+  list.id = "listID";
+
+  var listObject = document.createElement("li");
+  var paraH = document.createElement("p");
+  paraH.id = "paraH";
+  var x = document.createElement("LABEL");
+  x.innerHTML = "Habbit:";
+  listObject.appendChild(x);
+  paraH.appendChild(t1);
+  listObject.appendChild(paraH);
+  list.appendChild(listObject);
+
+
+  var listObject2 = document.createElement("li");
+  var paraH2 = document.createElement("p");
+  paraH2.id = "paraH";
+  var y = document.createElement("LABEL");
+  y.innerHTML = "Desc:";
+  listObject2.appendChild(y);
+  paraH2.appendChild(t2);
+  listObject2.appendChild(paraH2);
+  list.appendChild(listObject2);
+
+  var listObject3 = document.createElement("li");
+  list.appendChild(listObject3);
+  var div = document.createElement("div");
+  listObject3.appendChild(div);
+  var table  = document.createElement("table");
+  table.id = "customers";
+  div.appendChild(table);
+
+  var tbody  = document.createElement("tbody");
+  table.appendChild(tbody);
+
+  var tbr  = document.createElement("tr");
+  tbody.appendChild(tbr);
+  var tbd1  = document.createElement("td");
+  tbody.appendChild(tbd1);
+  var lbl  = document.createElement("label");
+  lbl.innerHTML = "Mondy";
+  tbd1.appendChild(lbl);
+
+  var tbd2  = document.createElement("td");
+  tbody.appendChild(tbd2);
+  var lb2  = document.createElement("label");
+  lb2.innerHTML = "Yes";
+  tbd2.appendChild(lb2);
+
+  var tbr  = document.createElement("tr");
+  tbody.appendChild(tbr);
+  var tbd1  = document.createElement("td");
+  tbody.appendChild(tbd1);
+  var lbl  = document.createElement("label");
+  lbl.innerHTML = "Tuesday";
+  tbd1.appendChild(lbl);
+
+  var tbd2  = document.createElement("td");
+  tbody.appendChild(tbd2);
+  var lb2  = document.createElement("label");
+  lb2.innerHTML = "Yes";
+  tbd2.appendChild(lb2);
+
+  var tbr  = document.createElement("tr");
+  tbody.appendChild(tbr);
+  var tbd1  = document.createElement("td");
+  tbody.appendChild(tbd1);
+  var lbl  = document.createElement("label");
+  lbl.innerHTML = "Wednesday";
+  tbd1.appendChild(lbl);
+
+  var tbd2  = document.createElement("td");
+  tbody.appendChild(tbd2);
+  var lb2  = document.createElement("label");
+  lb2.innerHTML = "Yes";
+  tbd2.appendChild(lb2);
+
+  var tbr  = document.createElement("tr");
+  tbody.appendChild(tbr);
+  var tbd1  = document.createElement("td");
+  tbody.appendChild(tbd1);
+  var lbl  = document.createElement("label");
+  lbl.innerHTML = "Thursday";
+  tbd1.appendChild(lbl);
+
+  var tbd2  = document.createElement("td");
+  tbody.appendChild(tbd2);
+  var lb2  = document.createElement("label");
+  lb2.innerHTML = "Yes";
+  tbd2.appendChild(lb2);
+
+  var tbr  = document.createElement("tr");
+  tbody.appendChild(tbr);
+  var tbd1  = document.createElement("td");
+  tbody.appendChild(tbd1);
+  var lbl  = document.createElement("label");
+  lbl.innerHTML = "Friday";
+  tbd1.appendChild(lbl);
+
+  var tbd2  = document.createElement("td");
+  tbody.appendChild(tbd2);
+  var lb2  = document.createElement("label");
+  lb2.innerHTML = "Yes";
+  tbd2.appendChild(lb2);
+
+  var tbr  = document.createElement("tr");
+  tbody.appendChild(tbr);
+  var tbd1  = document.createElement("td");
+  tbody.appendChild(tbd1);
+  var lbl  = document.createElement("label");
+  lbl.innerHTML = "Saturday";
+  tbd1.appendChild(lbl);
+
+  var tbd2  = document.createElement("td");
+  tbody.appendChild(tbd2);
+  var lb2  = document.createElement("label");
+  lb2.innerHTML = "Yes";
+  tbd2.appendChild(lb2);
+
+  var tbr  = document.createElement("tr");
+  tbody.appendChild(tbr);
+  var tbd1  = document.createElement("td");
+  tbody.appendChild(tbd1);
+  var lbl  = document.createElement("label");
+  lbl.innerHTML = "Sunday";
+  tbd1.appendChild(lbl);
+
+  var tbd2  = document.createElement("td");
+  tbody.appendChild(tbd2);
+  var lb2  = document.createElement("label");
+  lb2.innerHTML = "Yes";
+  tbd2.appendChild(lb2);
+
+
+  li.appendChild(list);
 
   var canEdit = false;
 
@@ -146,19 +284,38 @@ function newElement() {
   var elem = document.getElementById("btnDIV");
   editButton.onclick = function () {
       if(canEdit) {
-          para.contentEditable = "false";
-          para.style.color = "black";
+          paraH.contentEditable = "false";
+          paraH.style.color = "black";
           canEdit = false;
           editButton.textContent = "Edit";
       } else {
-          para.contentEditable = "true";
+          paraH.contentEditable = "true";
           canEdit = true;
-          para.style.color = "green";
+          paraH.style.color = "green";
           editButton.textContent = "Save";
       }
   };
-  li.appendChild(editButton);
+  listObject.appendChild(editButton);
 
+  var editButton2 = document.createElement("button");
+  var t = document.createTextNode("Edit");
+  editButton2.appendChild(t);
+  editButton2.id = "btnDIV";
+  var elem = document.getElementById("btnDIV");
+  editButton2.onclick = function () {
+      if(canEdit) {
+          paraH2.contentEditable = "false";
+          paraH2.style.color = "black";
+          canEdit = false;
+          editButton2.textContent = "Edit";
+      } else {
+          paraH2.contentEditable = "true";
+          canEdit = true;
+          paraH2.style.color = "green";
+          editButton2.textContent = "Save";
+      }
+  };
+  listObject2.appendChild(editButton2);
 
   //error message
   close_span.className = "close";
