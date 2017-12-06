@@ -170,13 +170,22 @@ function newElement() {
   var tbody  = document.createElement("tbody");
   table.appendChild(tbody);
 
-  var tbr  = document.createElement("tr");
-  tbody.appendChild(tbr);
-  var tbd1  = document.createElement("td");
-  tbody.appendChild(tbd1);
-  var lbl  = document.createElement("label");
-  lbl.innerHTML = "Mondy";
-  tbd1.appendChild(lbl);
+  function createDay() {
+
+  }
+
+  function createDay(day) {
+    var tbr  = document.createElement("tr");
+    tbody.appendChild(tbr);
+    var tbd1  = document.createElement("td");
+    tbody.appendChild(tbd1);
+    var lbl  = document.createElement("label");
+    lbl.innerHTML = day;
+    tbd1.appendChild(lbl);
+  }
+
+  createDay("Monday");
+
 
   var tbd2  = document.createElement("td");
   tbody.appendChild(tbd2);
